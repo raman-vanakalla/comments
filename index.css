@@ -1,0 +1,15 @@
+#video
+{
+	position: relative;
+	left: 400px;
+	top:20px;
+	background-color: #D3D3D3;
+	height: 350px;
+	width: 564px;
+}
+
+a:hover
+{
+	color:red;
+	cursor: pointer;
+}
