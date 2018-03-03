@@ -68,7 +68,7 @@
        	comments=1;
        	var div=document.createElement("DIV");
        	var name=document.createElement("b");
-       	var n=document.createTextNode(person);
+       	var n=document.createTextNode(person.charAt(0).toUpperCase()+person.slice(1));
        	name.appendChild(n);
        	var next=document.createElement("br");
        	name.appendChild(next);
