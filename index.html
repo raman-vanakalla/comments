@@ -81,6 +81,8 @@
        	div.appendChild(name);
        	var p=document.createElement(p);
        	var text=document.getElementsByTagName("INPUT")[0];
+       	if(text.value)
+       	{
         var t=document.createTextNode(text.value);
         p.appendChild(t);
         div.appendChild(p);
@@ -90,7 +92,7 @@
        	var c=document.getElementById("comm");
        	c.appendChild(div);
         text.value=' ';
-
+        }
        }
       </script>
        }
