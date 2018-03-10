@@ -75,20 +75,20 @@
           com:c,
           time:date.getTime()
        }
-       localStorage.setItem("no_com",JSON.stringify(obj));
+       localStorage.setItem(no_com,JSON.stringify(obj));
        console.log("this is ",no_com);
        localStorage.no_of=Number(localStorage.no_of)+1;
        commentsDom();
    }
    function commentsDom()
    {
-    var i='1';
+    var i=1;
     var end=Number(localStorage.no_of);
    
     while(i<=end)
     {
       console.log(i);
-       var robj=localStorage.getItem("i");
+       var robj=localStorage.getItem(i);
     console.log('retrievedObject: ', robj);
     i++;
     }
