@@ -63,9 +63,18 @@
         div.appendChild(sub);
         c.appendChild(div);
    }
+   var no_com=Number(localStorage.no_of)+1;
+
    function onSubmit()
    {
-
+       var date=new Date();
+       var c=document.getElementsByTag("INPUT")[0];
+       var obj{
+          name:person,
+          com:c,
+          time:date.getTime();
+       }
+       localStorage.setItem("no_com",JSON.stringify(obj));
    }
   </script>
        
