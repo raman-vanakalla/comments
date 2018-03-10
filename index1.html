@@ -63,10 +63,11 @@
         div.appendChild(sub);
         c.appendChild(div);
    }
-   var no_com=Number(localStorage.no_of)+1;
+   
 
    function onSubmit()
    {
+       var no_com=Number(localStorage.no_of)+1;
        var date=new Date();
        var c=document.getElementsByTagName("INPUT")[0].value;
        var obj={
@@ -75,8 +76,19 @@
           time:date.getTime()
        }
        localStorage.setItem("no_com",JSON.stringify(obj));
-       var robj=localStorage.no_com;
-       console.log('retrievedObject: ', JSON.parse(robj));
+       localStorage.no_of=Number(localStorage.no_of)+1;
+       commentsDom();
+   }
+   function commentsDom()
+   {
+    var i=1;
+    var end=Number(localStorage.no_of);
+   
+    while(i>end)
+    {
+       var robj=localStorage.getItem(i);
+    console.log('retrievedObject: ', JSON.parse(robj));
+    }
    }
   </script>
        
