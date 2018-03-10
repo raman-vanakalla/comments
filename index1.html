@@ -77,7 +77,7 @@
        }
        localStorage.setItem("no_com",JSON.stringify(obj));
        localStorage.no_of=Number(localStorage.no_of)+1;
-       console.log("done");
+
        commentsDom();
    }
    function commentsDom()
@@ -89,6 +89,7 @@
     {
        var robj=localStorage.getItem(i);
     console.log('retrievedObject: ', JSON.parse(robj));
+    i++;
     }
    }
   </script>
