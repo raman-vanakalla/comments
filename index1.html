@@ -81,13 +81,13 @@
    }
    function commentsDom()
    {
-    var i=1;
+    var i='1';
     var end=Number(localStorage.no_of);
    
     while(i<=end)
     {
-       var robj=localStorage.getItem("i");
-    console.log('retrievedObject: ', JSON.parse(robj));
+       var robj=localStorage.getItem(i);
+    console.log('retrievedObject: ', robj);
     i++;
     }
    }
