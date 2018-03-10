@@ -24,14 +24,8 @@
 
 
   <script type="text/javascript">
-  var person;
-     if (typeof(Storage) !== "undefined") 
-     {  
-      alert("hey");
-      localStorage.setItem("lastname", "Smith");
-      document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-     }
-      
+  var person;  
+  //taking name from the user   
       var fun=function()
       {
        person = prompt("Please enter your name", "");
@@ -42,6 +36,13 @@
       	alert("you have to enter the name");
       	 person = prompt("Please enter your name", "");
       }
+
+   //cheking if there are comments before
+   if(localStorage.getItem("no_of")===null)
+   {
+    localStorage.setItem("no_of",0)
+    alert("created");
+   }
 
 
   </script>
