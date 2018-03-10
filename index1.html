@@ -75,6 +75,8 @@
           time:date.getTime()
        }
        localStorage.setItem("no_com",JSON.stringify(obj));
+       var robj=localStorage.no_com;
+       console.log('retrievedObject: ', JSON.parse(robj));
    }
   </script>
        
