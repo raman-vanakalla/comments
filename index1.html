@@ -76,6 +76,7 @@
           time:date.getTime()
        }
        localStorage.setItem("no_com",JSON.stringify(obj));
+       console.log("this is ",no_com);
        localStorage.no_of=Number(localStorage.no_of)+1;
        commentsDom();
    }
