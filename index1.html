@@ -63,6 +63,7 @@
         div.appendChild(inp);
         div.appendChild(sub);
         c.appendChild(div);
+        commentsDom();
    }
    
 
@@ -90,8 +91,33 @@
     {
       console.log(i);
        var robj=localStorage.getItem(i);
-    console.log('retrievedObject: ', JSON.parse(robj));
-    i++;
+       var r=JSON.parse(robj);
+       var per=r.name;
+       var comment=r.com;
+    
+
+
+
+      var div=document.createElement("DIV");
+        var name=document.createElement("b");
+        var n=document.createTextNode(per.charAt(0).toUpperCase()+person.slice(1));
+        name.appendChild(n);
+        var next=document.createElement("br");
+        name.appendChild(next);
+        div.style.backgroundColor='#D3D3D3';
+        div.appendChild(name);
+        var p=document.createElement(p);
+       
+        var t=document.createTextNode(comment);
+        p.appendChild(t);
+        div.appendChild(p);
+        var nex=document.createElement("br");
+        div.appendChild(nex);
+
+        var c=document.getElementById("comm");
+        c.appendChild(div);
+        var inp=document.getElementsByTagName("INPUT")[0].value="";
+        i++;
     }
    }
   </script>
