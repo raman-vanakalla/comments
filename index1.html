@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>comments</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+
+     <p>click on comments to comment on the video</p>
+     <p>after commenting click on commets to hide it</p>
+      <div id="video">
+       
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Wn96FZtQC-w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <a id="com" onclick="display()" >comments</a>
+         	<div id="comm">
+      	     	
+      	    </div>
+      	<p id="result">helloo</p>
+      	 
+      </div>
+
+
+
+  <script type="text/javascript">
+  var person;
+     if (typeof(Storage) !== "undefined") 
+     {  
+      alert("hey");
+      localStorage.setItem("lastname", "Smith");
+      document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+     }
+      
+      var fun=function()
+      {
+       person = prompt("Please enter your name", "");
+      };
+      fun();
+      while(!person||person.lenght==0)
+      {
+      	alert("you have to enter the name");
+      	 person = prompt("Please enter your name", "");
+      }
+
+
+  </script>
+       
+</body>
+</html>
