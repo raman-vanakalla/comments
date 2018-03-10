@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>comments</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
+  <title>comments</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 
@@ -14,11 +14,11 @@
             
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Wn96FZtQC-w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <a id="com" onclick="display()" >comments</a>
-         	<div id="comm">
-      	     	
-      	    </div>
-      	<p id="result">helloo</p>
-      	 
+          <div id="comm">
+              
+            </div>
+        
+         
       </div>
 
 
@@ -33,18 +33,31 @@
       fun();
       while(!person||person.lenght==0)
       {
-      	alert("you have to enter the name");
-      	 person = prompt("Please enter your name", "");
+        alert("you have to enter the name");
+         person = prompt("Please enter your name", "");
       }
 
    //cheking if there are comments before
    if(localStorage.getItem("no_of")===null)
    {
-    localStorage.setItem("no_of",0)
-    alert("created");
+    localStorage.setItem("no_of","0")
    }
-
-
+   function display()
+   {
+        var div=document.createElement("DIV");
+        div.style.backgroundColor='#D3D3D3';
+        var inp=document.createElement("INPUT");
+        inp.setAttribute("type","text");
+        inp.setAttribute("size","74px");
+        var sub=document.createElement("button");
+        var t=document.createTextNode("submit");
+        sub.appendChild(t);
+        sub.addEventListener("click",onSubmit);
+        var c=document.getElementById('comm');
+        div.appendChild(inp);
+        div.appendChild(sub);
+        c.appendChild(div);
+   }
   </script>
        
 </body>
