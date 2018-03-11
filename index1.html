@@ -120,6 +120,11 @@
         ed.appendChild(te);
         ed.setAttribute("class","edit");
         name.appendChild(ed);
+        var de=document.createElement("a");
+        var det=document.createTextNode("delete");
+        de.appendChild(det);
+        de.setAttribute("class","edit");
+        name.appendChild(de);
         var next=document.createElement("br");
         name.appendChild(next);
         div.style.backgroundColor='#D3D3D3';
