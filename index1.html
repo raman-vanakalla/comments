@@ -115,6 +115,10 @@
         var name=document.createElement("b");
         var n=document.createTextNode(per.charAt(0).toUpperCase()+person.slice(1));
         name.appendChild(n);
+        var ed=document.createElement("p");
+        var te=document.createTextNode("edit");
+        ed.appendChild(te);
+        name.appendChild(ed);
         var next=document.createElement("br");
         name.appendChild(next);
         div.style.backgroundColor='#D3D3D3';
