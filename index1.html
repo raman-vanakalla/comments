@@ -115,10 +115,12 @@
         var name=document.createElement("b");
         var n=document.createTextNode(per.charAt(0).toUpperCase()+person.slice(1));
         name.appendChild(n);
+        name.setAttribute("id",i);
         var ed=document.createElement("a");
         var te=document.createTextNode("edit");
         ed.appendChild(te);
         ed.setAttribute("class","edit");
+        ed.addEventListener("click",edit);
         name.appendChild(ed);
         var de=document.createElement("a");
         var det=document.createTextNode("delete");
@@ -142,6 +144,23 @@
         c.appendChild(div);
         var inp=document.getElementsByTagName("INPUT")[0].value="";
         i++;
+    }
+
+    function edit(e)
+    {
+
+        var target=e.target;
+        var b=target.parentNode.id;
+        var obj=JSON.parse(localStorage.getItem(b));
+        if(person!=obj.name)
+        {
+          alert("sorry !1 you cant edit this :)");
+        }
+        else
+        {
+        document.getElementsByTagName("INPUT")[0].value=obj.com;
+        localStorage.removeItem(b);
+        }
     }
    }
   </script>
