@@ -80,12 +80,7 @@
        localStorage.setItem(no_com,JSON.stringify(obj));
        console.log("this is ",no_com);
        localStorage.no_of=Number(localStorage.no_of)+1;
-       var myNode = document.getElementById("comm").firstChild;
-       console.log(myNode);
-      while (myNode.firstChild) {
-      myNode.removeChild(myNode.firstChild);
-      console.log("deletion done");
-       }
+       document.getElementsByClassName("del").remove();
          commentsDom();
    }
    function commentsDom()
