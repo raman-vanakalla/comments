@@ -89,15 +89,16 @@
        localStorage.setItem(no_com,JSON.stringify(obj));
        console.log("this is ",no_com);
        localStorage.no_of=Number(localStorage.no_of)+1;
-       var list=document.getElementsByClassName("del");
-       while(list.length>0)
-       {
-        list[0].parentNode.removeChild(list[0]);
-       }
+      
        commentsDom();
    }
    function commentsDom()
    {
+     var list=document.getElementsByClassName("del");
+       while(list.length>0)
+       {
+        list[0].parentNode.removeChild(list[0]);
+       }
     var i=1;
     var end=Number(localStorage.no_of);
    
