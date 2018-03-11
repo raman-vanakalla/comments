@@ -13,3 +13,9 @@ a:hover
 	color:red;
 	cursor: pointer;
 }
+
+.edit
+{
+	float: right;
+	margin-right: 5px;
+}
