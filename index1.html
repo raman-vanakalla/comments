@@ -105,6 +105,8 @@
     {
       console.log(i);
        var robj=localStorage.getItem(i);
+       if(robj===null)
+        return;
        var r=JSON.parse(robj);
        var per=r.name;
        var comment=r.com;
