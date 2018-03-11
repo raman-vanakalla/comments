@@ -132,6 +132,7 @@
         var det=document.createTextNode("delete");
         de.appendChild(det);
         de.setAttribute("class","edit");
+        de.addEventListener("click",dele);
         name.appendChild(de);
         var next=document.createElement("br");
         name.appendChild(next);
@@ -169,6 +170,21 @@
         }
         commentsDom();
     }
+   }
+   function dele(e)
+   {
+        var target=e.target;
+        var b=target.parentNode.id;
+        var obj=JSON.parse(localStorage.getItem(b));
+        if(person!=obj.name)
+        {
+          alert("sorry !1 you cant delete this :(");
+        }
+        else
+        {
+        localStorage.removeItem(b);
+        }
+        commentsDom();
    }
   </script>
        
