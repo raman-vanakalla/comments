@@ -37,7 +37,7 @@
         alert("you have to enter the name");
          person = prompt("Please enter your name", "");
       }
-
+  var disp=0;
    //cheking if there are comments before
    if(localStorage.getItem("no_of")===null)
    {
@@ -46,6 +46,7 @@
    }
    function display()
    {
+        document.getElementById("comm").innerHTML="";
         var div=document.createElement("DIV");
         div.style.backgroundColor='#D3D3D3';
         console.log("div done");
