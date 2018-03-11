@@ -78,9 +78,12 @@
 
    function onSubmit()
    {
+    var c=document.getElementsByTagName("INPUT")[0].value;
+    if(c==""||c===null)
+      return;
        var no_com=Number(localStorage.no_of)+1;
        var date=new Date();
-       var c=document.getElementsByTagName("INPUT")[0].value;
+       
        var obj={
           name:person,
           com:c,
