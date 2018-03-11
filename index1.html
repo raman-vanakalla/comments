@@ -122,7 +122,7 @@
       var div=document.createElement("DIV");
         div.setAttribute("class","del");
         var name=document.createElement("b");
-        var n=document.createTextNode(per.charAt(0).toUpperCase()+person.slice(1));
+        var n=document.createTextNode(per.charAt(0).toUpperCase()+per.slice(1));
         name.appendChild(n);
         name.setAttribute("id",i);
         var ed=document.createElement("a");
@@ -170,6 +170,7 @@
         {
           console.log(document.getElementsByTagName("INPUT")[0].value);
         document.getElementsByTagName("INPUT")[0].value=obj.com;
+        document.getElementsByTagName("INPUT")[0].focus();
         localStorage.removeItem(b);
         }
         commentsDom();
