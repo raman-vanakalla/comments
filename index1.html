@@ -100,8 +100,6 @@
        var r=JSON.parse(robj);
        var per=r.name;
        var comment=r.com;
-    
-
 
 
       var div=document.createElement("DIV");
@@ -109,7 +107,8 @@
         var name=document.createElement("b");
         var n=document.createTextNode(per.charAt(0).toUpperCase()+person.slice(1));
         name.appendChild(n);
-        
+        var next=document.createElement("br");
+        name.appendChild(next);
         div.style.backgroundColor='#D3D3D3';
         div.appendChild(name);
         var pin=document.createElement("P");
@@ -117,7 +116,8 @@
         var t=document.createTextNode(comment);
         pin.appendChild(t);
         div.appendChild(pin);
-       
+       var nex=document.createElement("br");
+        div.appendChild(nex);
 
         var c=document.getElementById("comm");
         c.appendChild(div);
