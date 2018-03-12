@@ -201,7 +201,9 @@
           else
           {
             document.getElementById("comm").innerHTML="";
-            
+            disp=0;
+            display();
+            document.getElementsByTagName("button")[0].addEventListener("click",onSubmit);
           }
         }
         else
