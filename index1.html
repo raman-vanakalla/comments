@@ -236,7 +236,11 @@
         }
         else
         {
-          localStorage.b.com=text;
+          var obj={
+          name:person,
+          com:text,
+          time:date.getTime() }
+          localStorage.setItem("b",JSON.stringify(obj));
         }
         document.getElementById("inb").addEventListener("click",onSubmit);
         onSubmit();
