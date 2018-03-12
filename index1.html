@@ -231,12 +231,12 @@
           if(del)
           {
             localStorage.removeItem(b);
-            document.getElementById("inb").addEventListener("click",onSubmit);
+            document.getElementsByTagName("button")[0].addEventListener("click",onSubmit);
             return;
           }
           else
           {
-            document.getElementById("inb").focus();
+            display();
           }
         }
         else
@@ -248,7 +248,7 @@
           time:date.getTime() }
           localStorage.setItem("b",JSON.stringify(obj));
         }
-        document.getElementById("inb").addEventListener("click",onSubmit);
+        document.getElementsByTagName("button")[0].addEventListener("click",onSubmit);
         onSubmit();
    }
    function dele(e)
