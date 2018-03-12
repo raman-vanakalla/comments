@@ -236,6 +236,7 @@
           }
           else
           {
+            disp=0;
             display();
           }
         }
@@ -249,7 +250,7 @@
           localStorage.setItem("b",JSON.stringify(obj));
         }
         document.getElementsByTagName("button")[0].addEventListener("click",onSubmit);
-        onSubmit();
+        addDown(b,text);
    }
    function dele(e)
    {
@@ -266,6 +267,44 @@
         target.parentNode.parentNode.remove();
         }
         
+   }
+   function addDown(b,text)
+   {
+    var div=document.createElement("DIV");
+        div.setAttribute("class","del");
+        var name=document.createElement("b");
+        var n=document.createTextNode(person.charAt(0).toUpperCase()+person.slice(1));
+        name.appendChild(n);
+        name.setAttribute("id",b);
+        var ed=document.createElement("a");
+        var te=document.createTextNode("edit");
+        ed.appendChild(te);
+        ed.setAttribute("class","edit");
+        ed.addEventListener("click",edit);
+        name.appendChild(ed);
+        var de=document.createElement("a");
+        var det=document.createTextNode("delete");
+        de.appendChild(det);
+        de.setAttribute("class","edit");
+        de.addEventListener("click",dele);
+        name.appendChild(de);
+        var next=document.createElement("br");
+        name.appendChild(next);
+        div.style.backgroundColor='#D3D3D3';
+        div.appendChild(name);
+        var pin=document.createElement("p");
+        pin.style.marginTop="0px";
+        pin.style.marginBottom="0px";
+       
+        var t=document.createTextNode(text);
+        pin.appendChild(t);
+        div.appendChild(pin);
+       
+
+        var c=document.getElementById("comm");
+        var frstcom=c.firstChild.nextSibling.nextSibling;
+        c.insertBefore(div,frstcom);
+        var inp=document.getElementsByTagName("INPUT")[0].value="";
    }
   </script>
        
