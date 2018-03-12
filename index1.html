@@ -39,7 +39,8 @@
       }
   var disp=0;
    //cheking if there are comments before
-   if(localStorage.getItem("no_of")===null)
+   var no=localStorage.getItem("no_of")
+   if(no===null||no===NaN)
    {
     console.log("its just started");
     localStorage.setItem("no_of","0")
