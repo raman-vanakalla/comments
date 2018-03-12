@@ -102,16 +102,16 @@
        {
         list[0].parentNode.removeChild(list[0]);
        }
-    var i=1;
-    var end=Number(localStorage.no_of);
+    
+    var i=Number(localStorage.no_of);
    
-    while(i<=end)
+    while(i>=1)
     {
       console.log(i);
        var robj=localStorage.getItem(i);
        if(robj===null)
         {
-          i++;
+          i--;
           continue;
         }
        var r=JSON.parse(robj);
@@ -153,9 +153,9 @@
         var c=document.getElementById("comm");
         c.appendChild(div);
         var inp=document.getElementsByTagName("INPUT")[0].value="";
-        i++;
+        i--;
     }
-
+}
     function edit(e)
     {
 
