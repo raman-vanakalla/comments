@@ -127,8 +127,9 @@
         div.appendChild(pin);
        
 
-        var c=document.getElementById("comm").firstChild.nextSibling;
-        c.insertBefore(div);
+        var c=document.getElementById("comm");
+        var frstcom=c.firstChild.nextSibling;
+        c.insertBefore(div,frstcom);
         var inp=document.getElementsByTagName("INPUT")[0].value="";
    }
    function commentsDom()
