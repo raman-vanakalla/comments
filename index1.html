@@ -100,43 +100,7 @@
        console.log("this is ",no_com);
        localStorage.no_of=Number(localStorage.no_of)+1;
       
-       
-
-        var div=document.createElement("DIV");
-        div.setAttribute("class","del");
-        var name=document.createElement("b");
-        var n=document.createTextNode(person.charAt(0).toUpperCase()+person.slice(1));
-        name.appendChild(n);
-        name.setAttribute("id",no_com);
-        var ed=document.createElement("a");
-        var te=document.createTextNode("edit");
-        ed.appendChild(te);
-        ed.setAttribute("class","edit");
-        ed.addEventListener("click",edit);
-        name.appendChild(ed);
-        var de=document.createElement("a");
-        var det=document.createTextNode("delete");
-        de.appendChild(det);
-        de.setAttribute("class","edit");
-        de.addEventListener("click",dele);
-        name.appendChild(de);
-        var next=document.createElement("br");
-        name.appendChild(next);
-        div.style.backgroundColor='#D3D3D3';
-        div.appendChild(name);
-        var pin=document.createElement("p");
-        pin.style.marginTop="0px";
-        pin.style.marginBottom="0px";
-       
-        var t=document.createTextNode(comment);
-        pin.appendChild(t);
-        div.appendChild(pin);
-       
-
-        var c=document.getElementById("comm");
-        var frstcom=c.firstChild.nextSibling.nextSibling;
-        c.insertBefore(div,frstcom);
-        var inp=document.getElementsByTagName("INPUT")[0].value="";
+       addDown(no_com,comment);
    }
    function commentsDom()
    {
