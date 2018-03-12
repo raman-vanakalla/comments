@@ -206,14 +206,13 @@
         else
         {
           var inbox=document.getElementById("inb");
-          console.log(inbox.value);
           var z=obj.com;
         inbox.value=z;
         inbox.focus();
         target.parentNode.parentNode.remove();
-        var inbox=document.getElementsByTagName("button")[0];
-        inbox.removeEventListener("click",onSubmit);
-        inbox.addEventListener("click",onEdit(b));
+        var but=document.getElementsByTagName("button")[0];
+        but.removeEventListener("click",onSubmit);
+        but.addEventListener("click",function(e){onEdit(b,e)});
         }
         
     }
