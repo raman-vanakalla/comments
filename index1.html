@@ -59,6 +59,7 @@
         var inp=document.createElement("INPUT");
         inp.setAttribute("type","text");
         inp.setAttribute("size",'74%');
+        inp.setAttribute("id","inb");
         console.log("inp done");
         var sub=document.createElement("button");
         var t=document.createTextNode("submit");
@@ -168,9 +169,10 @@
         }
         else
         {
-          console.log(document.getElementsByTagName("INPUT")[0].value);
-        document.getElementsByTagName("INPUT")[0].value=obj.com;
-        document.getElementsByTagName("INPUT")[0].focus();
+          var inbox=document.getElementById("inb");
+          console.log(inbox.value);
+        inbox.value=obj.com;
+        inbox.focus();
         localStorage.removeItem(b);
         }
         commentsDom();
