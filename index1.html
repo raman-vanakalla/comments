@@ -210,12 +210,37 @@
           var z=obj.com;
         inbox.value=z;
         inbox.focus();
-        localStorage.removeItem(b);
         target.parentNode.parentNode.remove();
+        var inbox=document.getElementsByTagName("button")[0];
+        inbox.removeEventListener("click",onSubmit);
+        inbox.addEventListener("click",onEdit(b));
         }
         
     }
-   
+   function onEdit(b,e)
+   {
+        var text=document.getElementById("inb").value;
+        if(text=="")
+        {
+          var del=confirm("do you want to delete");
+          if(del)
+          {
+            localStorage.removeItem(b);
+            document.getElementById("inb").addEventListener("click",onSubmit);
+            return;
+          }
+          else
+          {
+            document.getElementById("inb").focus();
+          }
+        }
+        else
+        {
+          localStorage.b.com=text;
+        }
+        document.getElementById("inb").addEventListener("click",onSubmit);
+        onSubmit();
+   }
    function dele(e)
    {
         var target=e.target;
