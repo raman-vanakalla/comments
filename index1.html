@@ -52,6 +52,7 @@
    }
    function display()
    {
+        console.log("display");
         if(disp==1)
         {
         document.getElementById("comm").innerHTML="";
@@ -66,17 +67,9 @@
         inp.setAttribute("type","text");
         inp.setAttribute("size",'74%');
         inp.setAttribute("id","inb");
-        inp.addEventListener("keyUp",function(e)
-        {
-          e.preventDefault();
-          console.log("amma");
-          if(e.keyCode===13)
-            console.log("yoo");
-        });
         console.log("inp done");
         var sub=document.createElement("button");
         var t=document.createTextNode("submit");
-
         sub.appendChild(t);
         sub.addEventListener("click",onSubmit);
         console.log("sub done");
@@ -92,6 +85,7 @@
 
    function onSubmit()
    {
+     console.log("onSubmit");
     var comment=document.getElementsByTagName("INPUT")[0].value;
     if(comment==""||comment===null)
       return;
@@ -111,6 +105,7 @@
    }
    function commentsDom()
    {
+     console.log("commntsDom");
      var list=document.getElementsByClassName("del");
        while(list.length>0)
        {
@@ -172,7 +167,7 @@
 }
     function edit(e)
     {
-
+        console.log("edit");
         var target=e.target;
         var b=target.parentNode.id;
         var obj=JSON.parse(localStorage.getItem(b));
@@ -195,6 +190,7 @@
     }
    function onEdit(b,e)
    {
+        console.log("onEdit");
         var text=document.getElementById("inb").value;
         if(text=="")
         {
@@ -228,6 +224,7 @@
    }
    function dele(e)
    {
+        console.log("dele");
         var target=e.target;
         var b=target.parentNode.id;
         var obj=JSON.parse(localStorage.getItem(b));
@@ -244,6 +241,7 @@
    }
    function addDown(b,text)
    {
+    console.log("addDown");
     var div=document.createElement("DIV");
         div.setAttribute("class","del");
         var name=document.createElement("b");
