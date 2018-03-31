@@ -108,12 +108,6 @@
    function commentsDom()
    {
        console.log("commntsDom");
-       var list=document.getElementsByClassName("del");
-       while(list.length>0)
-       {
-          console.log("boyii");
-          list[0].parentNode.removeChild(list[0]);
-       }
     
        var i=Number(localStorage.no_of);
    
@@ -164,7 +158,6 @@
 
           var c=document.getElementById("comm");
           c.appendChild(div);
-          var inp=document.getElementsByTagName("INPUT")[0].value="";
           i--;
     }
 }
