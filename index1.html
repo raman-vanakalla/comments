@@ -181,7 +181,7 @@
           var z=obj.com;
           inbox.value=z;
           inbox.focus();
-          console.log(target.parentNode.parentNode.innerHTML);
+          target.parentNode.parentNode.remove();
           var but=document.getElementsByTagName("button")[0];
           but.removeEventListener("click",onSubmit);
           but.addEventListener("click",function(e){onEdit(b,e)});
