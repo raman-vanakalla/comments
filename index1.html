@@ -110,7 +110,7 @@
        console.log("commntsDom");
     
        var i=Number(localStorage.no_of);
-   
+       console.log()
        while(i>=1)
        {
           console.log(i);
@@ -163,10 +163,12 @@
 }
     function edit(e)
     {
+        commentsDom();
         console.log("edit");
         var target=e.target;
         var b=target.parentNode.id;
         var obj=JSON.parse(localStorage.getItem(b));
+
         if(person!=obj.name)
         {
           alert("sorry ! you cant edit this :)");
