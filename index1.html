@@ -182,6 +182,7 @@
           inbox.value=z;
           inbox.focus();
           target.parentNode.parentNode.innerHTML='';
+          console.log("removed");
           var but=document.getElementsByTagName("button")[0];
           but.removeEventListener("click",onSubmit);
           but.addEventListener("click",function(e){onEdit(b,e)});
