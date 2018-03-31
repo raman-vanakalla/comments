@@ -14,7 +14,7 @@
             
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Wn96FZtQC-w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <a id="com" onclick="display()" >comments</a>
-          <div id="comm">
+            <div id="comm">
               
             </div>
         
@@ -31,72 +31,66 @@
       {
          person = prompt("Please enter your name", "");
       }();
+  //condition for name
       while(!person||person.lenght==0)
       {
-        alert("you have to enter the name");
+         alert("you have to enter the name");
          person = prompt("Please enter your name", "");
       }
-  var disp=0;
+  //to check if the comments block is displayed or not
+      var disp=0;
+
    //cheking if there are comments before
-   var no=localStorage.getItem("no_of")
-   console.log(no);
-   if(isNaN(no))
-   {
-    console.log("its just started");
-    localStorage.setItem("no_of","0")
-   }
-   else
-   {
-    console.log("sorry");
-   }
-   function display()
-   {
-        console.log("display");
-        if(disp==1)
-        {
-        document.getElementById("comm").innerHTML="";
-        disp=0;
-        }
-        else
-        {
-        var div=document.createElement("DIV");
-        div.style.backgroundColor='#D3D3D3';
+      var no=localStorage.getItem("no_of");
+      console.log(no);
+      if(isNaN(no))
+      {
+         console.log("its just started");
+         localStorage.setItem("no_of","0")
+      }
+      else
+      {
+         console.log("sorry");
+      }
+      function display()
+      {
+         console.log("display");
+         if(disp==1)
+         {
+            document.getElementById("comm").innerHTML="";
+            disp=0;
+         }
+         else
+         {
+            var div=document.createElement("DIV");
+            div.style.backgroundColor='#D3D3D3';
         
-        var inp=document.createElement("INPUT");
-        inp.setAttribute("type","text");
-        inp.setAttribute("size",'74%');
-        inp.setAttribute("id","inb");
+            var inp=document.createElement("INPUT");
+            inp.setAttribute("type","text");
+            inp.setAttribute("size",'74%');
+            inp.setAttribute("id","inb");
         
-        var sub=document.createElement("button");
-        var t=document.createTextNode("submit");
-        sub.appendChild(t);
-        sub.addEventListener("click",onSubmit);
+            var sub=document.createElement("button");
+            var t=document.createTextNode("submit");
+            sub.appendChild(t);
+            sub.addEventListener("click",onSubmit);
       
-        var c=document.getElementById('comm');
-        div.appendChild(inp);
-        div.appendChild(sub);
-        c.appendChild(div);
-        k=document.getElementById("inb");
-        console.log("yeah");
-        k.addEventListener("keyUp",function(e)
-        {
-          e.preventDefault();
-          console.log("amma");
-          if(e.keyCode===13)
-            console.log("yoo");
-        });
-        commentsDom();
-        disp=1;
+            var c=document.getElementById('comm');
+            div.appendChild(inp);
+            div.appendChild(sub);
+            c.appendChild(div);
+            commentsDom();
+            disp=1;
       }
    }
    
 
    function onSubmit()
    {
-     console.log("onSubmit");
-    var comment=document.getElementsByTagName("INPUT")[0].value;
-    if(comment==""||comment===null)
-      return;
+       console.log("onSubmit");
+       var comment=document.getElementsByTagName("INPUT")[0].value;
+       if(comment==""||comment===null)
+       return;
        var no_com=Number(localStorage.no_of)+1;
        var date=new Date();
        
@@ -104,7 +98,7 @@
           name:person,
           com:comment,
           time:date.getTime()
-       }
+       };
        localStorage.setItem(no_com,JSON.stringify(obj));
        console.log("this is ",no_com);
        localStorage.no_of=Number(localStorage.no_of)+1;
@@ -113,64 +107,64 @@
    }
    function commentsDom()
    {
-     console.log("commntsDom");
-     var list=document.getElementsByClassName("del");
+       console.log("commntsDom");
+       var list=document.getElementsByClassName("del");
        while(list.length>0)
        {
-        list[0].parentNode.removeChild(list[0]);
+          list[0].parentNode.removeChild(list[0]);
        }
     
-    var i=Number(localStorage.no_of);
+       var i=Number(localStorage.no_of);
    
-    while(i>=1)
-    {
-      console.log(i);
-       var robj=localStorage.getItem(i);
-       if(robj===null)
-        {
+       while(i>=1)
+       {
+          console.log(i);
+          var robj=localStorage.getItem(i);
+          if(robj===null)
+          {
+             i--;
+             continue;
+          }
+          var r=JSON.parse(robj);
+          var per=r.name;
+          var comment=r.com;
+
+
+          var div=document.createElement("DIV");
+          div.setAttribute("class","del");
+          var name=document.createElement("b");
+          var n=document.createTextNode(per.charAt(0).toUpperCase()+per.slice(1));
+          name.appendChild(n);
+          name.setAttribute("id",i);
+          var ed=document.createElement("a");
+          var te=document.createTextNode("edit");
+          ed.appendChild(te);
+          ed.setAttribute("class","edit");
+          ed.addEventListener("click",edit);
+          name.appendChild(ed);
+          var de=document.createElement("a");
+          var det=document.createTextNode("delete");
+          de.appendChild(det);
+          de.setAttribute("class","edit");
+          de.addEventListener("click",dele);
+          name.appendChild(de);
+          var next=document.createElement("br");
+          name.appendChild(next);
+          div.style.backgroundColor='#D3D3D3';
+          div.appendChild(name);
+          var pin=document.createElement("p");
+          pin.style.marginTop="0px";
+          pin.style.marginBottom="0px";
+       
+          var t=document.createTextNode(comment);
+          pin.appendChild(t);
+          div.appendChild(pin);
+       
+
+          var c=document.getElementById("comm");
+          c.appendChild(div);
+          var inp=document.getElementsByTagName("INPUT")[0].value="";
           i--;
-          continue;
-        }
-       var r=JSON.parse(robj);
-       var per=r.name;
-       var comment=r.com;
-
-
-      var div=document.createElement("DIV");
-        div.setAttribute("class","del");
-        var name=document.createElement("b");
-        var n=document.createTextNode(per.charAt(0).toUpperCase()+per.slice(1));
-        name.appendChild(n);
-        name.setAttribute("id",i);
-        var ed=document.createElement("a");
-        var te=document.createTextNode("edit");
-        ed.appendChild(te);
-        ed.setAttribute("class","edit");
-        ed.addEventListener("click",edit);
-        name.appendChild(ed);
-        var de=document.createElement("a");
-        var det=document.createTextNode("delete");
-        de.appendChild(det);
-        de.setAttribute("class","edit");
-        de.addEventListener("click",dele);
-        name.appendChild(de);
-        var next=document.createElement("br");
-        name.appendChild(next);
-        div.style.backgroundColor='#D3D3D3';
-        div.appendChild(name);
-        var pin=document.createElement("p");
-        pin.style.marginTop="0px";
-        pin.style.marginBottom="0px";
-       
-        var t=document.createTextNode(comment);
-        pin.appendChild(t);
-        div.appendChild(pin);
-       
-
-        var c=document.getElementById("comm");
-        c.appendChild(div);
-        var inp=document.getElementsByTagName("INPUT")[0].value="";
-        i--;
     }
 }
     function edit(e)
@@ -187,12 +181,12 @@
         {
           var inbox=document.getElementById("inb");
           var z=obj.com;
-        inbox.value=z;
-        inbox.focus();
-        target.parentNode.parentNode.remove();
-        var but=document.getElementsByTagName("button")[0];
-        but.removeEventListener("click",onSubmit);
-        but.addEventListener("click",function(e){onEdit(b,e)});
+          inbox.value=z;
+          inbox.focus();
+          target.parentNode.parentNode.remove();
+          var but=document.getElementsByTagName("button")[0];
+          but.removeEventListener("click",onSubmit);
+          but.addEventListener("click",function(e){onEdit(b,e)});
         }
         
     }
@@ -249,8 +243,8 @@
    }
    function addDown(b,text)
    {
-    console.log("addDown");
-    var div=document.createElement("DIV");
+        console.log("addDown");
+        var div=document.createElement("DIV");
         div.setAttribute("class","del");
         var name=document.createElement("b");
         var n=document.createTextNode(person.charAt(0).toUpperCase()+person.slice(1));
