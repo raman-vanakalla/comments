@@ -12,6 +12,8 @@
             
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Wn96FZtQC-w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <a id="com" onclick="display()" >comments</a>
+            <a >time_sort</a>
+            <a >name_sort</a>
             <div id="comm">
               
             </div>
@@ -193,7 +195,7 @@
    {
         console.log("onEdit");
         var text=document.getElementById("inb").value;
-        if(text=="")
+        if(text.trim().length==0)
         {
           var del=confirm("do you want to delete");
           if(del)
@@ -278,6 +280,10 @@
         var frstcom=c.firstChild.nextSibling.nextSibling;
         c.insertBefore(div,frstcom);
         var inp=document.getElementsByTagName("INPUT")[0].value="";
+   }
+   function time()
+   {
+
    }
   </script>
        
