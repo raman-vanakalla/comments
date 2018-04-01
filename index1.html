@@ -41,7 +41,7 @@
    //cheking if there are comments before
       var no=localStorage.getItem("no_of");
       console.log(no);
-      if(isNaN(no))
+      if(isNaN(no)||no==null)
       {
          console.log("its just started");
          localStorage.setItem("no_of","0")
