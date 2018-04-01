@@ -169,6 +169,7 @@
         console.log("edit");
         var target=e.target;
         var b=target.parentNode.id;
+        target=document.getElementById(b);
         var obj=JSON.parse(localStorage.getItem(b));
 
         if(person!=obj.name)
